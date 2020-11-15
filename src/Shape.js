@@ -25,7 +25,7 @@ const names = {
 }
 
 const suffixes = {
-  0: 'agon',
+  0: 'gon',
   1: 'henagon',
   2: 'digon',
   3: 'trigon',

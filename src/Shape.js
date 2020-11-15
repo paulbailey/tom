@@ -18,6 +18,7 @@ const ShapeController = ({ setSides, setColour, setName }) => {
   const [sidesChosen, setSidesChosen] = useState(3)
   const [colour, setColourInternal] = useState('#000000')
   const [name, setNameChosen] = useState('')
+  const [nameDisabled, setNameDisabled] = useState(false)
 
   const handleChange = (evt) => {
 
@@ -28,6 +29,10 @@ const ShapeController = ({ setSides, setColour, setName }) => {
     }
     if (s <= 10) {
       setName(names[s])
+      setNameChosen(names[s])
+      setNameDisabled(true)
+    } else {
+      setNameDisabled(false)
     }
   }
 
@@ -51,7 +56,7 @@ const ShapeController = ({ setSides, setColour, setName }) => {
     </Form.Group>
     <Form.Group>
     <Form.Label>Name</Form.Label>
-    <Form.Control type='text' onChange={handleChangeName}  value={name}></Form.Control>
+    <Form.Control type='text' onChange={handleChangeName}  value={name} disabled={nameDisabled}></Form.Control>
     </Form.Group>
     <Button onClick={() => {window.print()}}><ImPrinter /> Print</Button>
     </Form></div>

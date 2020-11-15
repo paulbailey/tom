@@ -25,8 +25,8 @@ const names = {
 
 const ShapeController = ({ setSides, setColour, setName }) => {
   const [sidesChosen, setSidesChosen] = useState(3)
-  const [colour, setColourInternal] = useState('#000000')
-  const [name, setNameChosen] = useState('')
+  const [colour, setColourInternal] = useState('#CCCCCC')
+  const [name, setNameChosen] = useState('Triangle')
   const [nameDisabled, setNameDisabled] = useState(false)
 
   const handleChange = (evt) => {

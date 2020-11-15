@@ -28,7 +28,8 @@ const ShapeController = ({ setSides, setColour, setName }) => {
   return <div><Form>
     <Form.Group>
     <Form.Label>Number of sides</Form.Label>
-    <Form.Control type='number' onChange={handleChange} value={sidesChosen} min={3}></Form.Control>
+    <Form.Control type='number' onChange={handleChange} value={sidesChosen} min={3}
+      inputmode="numeric" pattern="[0-9]*"></Form.Control>
     </Form.Group>
     <Form.Group>
     <Form.Label>Colour</Form.Label>

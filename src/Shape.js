@@ -41,6 +41,8 @@ const ShapeController = ({ setSides, setColour, setName }) => {
       setNameChosen(names[s])
       setNameDisabled(true)
     } else {
+      setName('')
+      setNameChosen('')
       setNameDisabled(false)
     }
   }

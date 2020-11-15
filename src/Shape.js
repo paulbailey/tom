@@ -3,6 +3,17 @@ import React, { useState } from 'react'
 import { Form, Button } from 'react-bootstrap'
 import { ImPrinter } from "react-icons/im";
 
+const names = {
+  3: 'Triangle',
+  4: 'Square',
+  5: 'Pentagon',
+  6: 'Hexagon',
+  7: 'Heptagon',
+  8: 'Octagon',
+  9: 'Nonagon',
+  10: 'Decagon'
+}
+
 const ShapeController = ({ setSides, setColour, setName }) => {
   const [sidesChosen, setSidesChosen] = useState(3)
   const [colour, setColourInternal] = useState('#000000')
@@ -14,6 +25,9 @@ const ShapeController = ({ setSides, setColour, setName }) => {
     setSidesChosen(evt.target.value)
     if (s >= 3) {
       setSides(s)
+    }
+    if (s <= 10) {
+      setName(names[s])
     }
   }
 

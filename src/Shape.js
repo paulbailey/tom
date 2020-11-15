@@ -5,7 +5,7 @@ import { ImPrinter } from "react-icons/im";
 
 const names = {
   3: 'Triangle',
-  4: 'Square',
+  4: 'Quadrilateral',
   5: 'Pentagon',
   6: 'Hexagon',
   7: 'Heptagon',
@@ -27,7 +27,7 @@ const ShapeController = ({ setSides, setColour, setName }) => {
   const [sidesChosen, setSidesChosen] = useState(3)
   const [colour, setColourInternal] = useState('#CCCCCC')
   const [name, setNameChosen] = useState('Triangle')
-  const [nameDisabled, setNameDisabled] = useState(false)
+  const [nameDisabled, setNameDisabled] = useState(true)
 
   const handleChange = (evt) => {
 

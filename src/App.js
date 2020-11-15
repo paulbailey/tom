@@ -9,8 +9,8 @@ import './App.css'
 
 function App() {
   const [sides, setSides] = useState(3)
-  const [colour, setColour] = useState("#000000")
-  const [name, setName] = useState("")
+  const [colour, setColour] = useState("#CCCCCC")
+  const [name, setName] = useState("Triangle")
   return (
     <><Navbar variant="light" bg="dark" className="no-print">
     <Navbar.Brand href="#home">TomShapes</Navbar.Brand>

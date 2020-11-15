@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { Form, Button } from 'react-bootstrap'
+import { Form, Button, Col } from 'react-bootstrap'
 import { ImPrinter } from "react-icons/im";
 
 const names = {
@@ -90,11 +90,16 @@ const ShapeController = ({ setSides, setColour, setName }) => {
     setName(evt.target.value)
     setNameChosen(evt.target.value)
   }
-  return <div><Form>
+  return <p><Form>
     <Form.Group>
-    <Form.Label>Number of sides</Form.Label>
-    <Form.Control type='number' onChange={handleChange} value={sidesChosen} min={3}
-      inputmode="numeric" pattern="[0-9]*"></Form.Control>
+      <Form.Row>
+      <Col><Form.Label>Number of sides</Form.Label></Col>
+      <Col><Form.Control type='number' onChange={handleChange} value={sidesChosen} min={3}
+      inputmode="numeric" pattern="[0-9]*"></Form.Control></Col>
+      </Form.Row>
+      <Form.Row>
+      <Col><Form.Control type="range"  onChange={handleChange} value={sidesChosen} min={3} max={50} /></Col>
+      </Form.Row>
     </Form.Group>
     <Form.Group>
     <Form.Label>Colour</Form.Label>
@@ -105,7 +110,7 @@ const ShapeController = ({ setSides, setColour, setName }) => {
     <Form.Control type='text' onChange={handleChangeName}  value={name} disabled={nameDisabled}></Form.Control>
     </Form.Group>
     <Button onClick={() => {window.print()}}><ImPrinter /> Print</Button>
-    </Form></div>
+    </Form></p>
 }
 
 export {  ShapeController }

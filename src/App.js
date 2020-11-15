@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import { Container, Row, Col, Navbar } from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
+
+import { ShapeController } from './Shape'
+import { PolygonRenderer } from './PolygonRenderer'
+
+import './App.css'
 
 function App() {
+  const [sides, setSides] = useState(3)
+  const [colour, setColour] = useState("#000000")
+  const [name, setName] = useState("")
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <><Navbar variant="light" bg="dark" className="no-print">
+    <Navbar.Brand href="#home">TomShapes</Navbar.Brand>
+  </Navbar>
+      <Container>
+      <Row>
+      <Col lg={8} className="fill">
+      <PolygonRenderer sides={sides} colour={colour} name={name}></PolygonRenderer>
+      </Col>
+        <Col className="no-print">
+        <ShapeController setSides={setSides} setColour={setColour} setName={setName}></ShapeController>
+        </Col>
+      </Row>
+    </Container></>
+ );
 }
 
 export default App;

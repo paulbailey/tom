@@ -21,6 +21,32 @@ const names = {
   17: 'Heptadecagon',
   18: 'Octakaidecagon',
   19: 'Enneadecagon',
+  20: 'Icosagon'
+}
+
+const suffixes = {
+  1: 'henagon',
+  2: 'digon',
+  3: 'trigon',
+  4: 'tetragon',
+  5: 'pentagon',
+  6: 'hexagon',
+  7: 'heptagon',
+  8: 'octagon',
+  9: 'enneagon'
+}
+
+const prefixes = {
+  2: "Icosi",
+  3: 'Triaconta',
+4: 'Tetraconta',
+5: 'Pentaconta',
+6: 'Hexaconta',
+7: 'Heptaconta',
+8: 'Octaconta',
+9: 'Enneaconta'
+10: 'Hecta'
+
 }
 
 const ShapeController = ({ setSides, setColour, setName }) => {
@@ -39,6 +65,14 @@ const ShapeController = ({ setSides, setColour, setName }) => {
     if (s <= 19) {
       setName(names[s])
       setNameChosen(names[s])
+      setNameDisabled(true)
+    } else if (s <= 109) {
+      const prefixIdx = Math.trunc(s / 10)
+      const prefix = prefixes[prefixIdx]
+      const suffixIdx = s - (prefixIdx * 10)
+      const suffix = suffixes[suffixIdx]
+      setName(prefix+suffix)
+      setNameChosen(prefix+suffix)
       setNameDisabled(true)
     } else {
       setName('')

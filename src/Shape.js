@@ -60,7 +60,7 @@ const ShapeController = ({ setSides, setColour, setName }) => {
 
     const s = parseInt(evt.target.value) 
     setSidesChosen(evt.target.value)
-    if (s >= 3) {
+    if (s >= 3 && s <= 1000) {
       setSides(s)
     }
     if (s <= 20) {

@@ -25,6 +25,7 @@ const names = {
 }
 
 const suffixes = {
+  0: 'agon',
   1: 'henagon',
   2: 'digon',
   3: 'trigon',
@@ -44,7 +45,7 @@ const prefixes = {
 6: 'Hexaconta',
 7: 'Heptaconta',
 8: 'Octaconta',
-9: 'Enneaconta'
+9: 'Enneaconta',
 10: 'Hecta'
 
 }
@@ -62,7 +63,7 @@ const ShapeController = ({ setSides, setColour, setName }) => {
     if (s >= 3) {
       setSides(s)
     }
-    if (s <= 19) {
+    if (s <= 20) {
       setName(names[s])
       setNameChosen(names[s])
       setNameDisabled(true)

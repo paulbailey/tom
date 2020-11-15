@@ -11,7 +11,16 @@ const names = {
   7: 'Heptagon',
   8: 'Octagon',
   9: 'Nonagon',
-  10: 'Decagon'
+  10: 'Decagon',
+  11: 'Hendecagon',
+  12: 'Dodecagon',
+  13: 'Triskaidecagon',
+  14: 'Tetrakaidecagon',
+  15: 'Pentadecagon',
+  16: 'Hexakaidecagon',
+  17: 'Heptadecagon',
+  18: 'Octakaidecagon',
+  19: 'Enneadecagon',
 }
 
 const ShapeController = ({ setSides, setColour, setName }) => {
@@ -27,7 +36,7 @@ const ShapeController = ({ setSides, setColour, setName }) => {
     if (s >= 3) {
       setSides(s)
     }
-    if (s <= 10) {
+    if (s <= 19) {
       setName(names[s])
       setNameChosen(names[s])
       setNameDisabled(true)

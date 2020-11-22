@@ -129,7 +129,7 @@ const ShapeController = ({ setSides, setColour, setName }) => {
     <Form.Label>Colour</Form.Label>
     <Form.Control type='color' onChange={handleChangeColour}  value={colour}></Form.Control>
     </Form.Group>
-    <Collapse show={!nameDisabled}>
+    <Collapse in={!nameDisabled}>
     <Form.Group>
     <Form.Label>Name</Form.Label>
     <Form.Control type='text' onChange={handleChangeName}  value={name} disabled={nameDisabled}></Form.Control>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { Form, Button, Collapse } from 'react-bootstrap'
+import { Form, Button, Collapse, Col } from 'react-bootstrap'
 import { ImPrinter } from "react-icons/im";
 
 const names = {

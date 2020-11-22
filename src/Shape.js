@@ -50,30 +50,6 @@ const prefixes = {
 
 }
 
-const suffixes = {
-  0: 'agon',
-  1: 'henagon',
-+2
- 	...digon
-+3
- 	...trigon
-+4
- 	...tetragon
-+5
- 	...pentagon
-+6
- 	...hexagon
-+7
- 	...heptagon
-+8
- 	...octagon
-+9
- 	...enneagon
-Example: a 62-sided polygon is a Hexacontadigon
-
-
-}
-
 const ShapeController = ({ setSides, setColour, setName }) => {
   const [sidesChosen, setSidesChosen] = useState(3)
   const [colour, setColourInternal] = useState('#CCCCCC')

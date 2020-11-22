@@ -22,7 +22,7 @@ function polygon(centerX, centerY, points, radius) {
 const PolygonRenderer = ({sides, colour, name}) => {
   return <div>
       <svg width="100%" height="100%" viewBox="0 0 500 500">
-      <path d={polygon(250, 250, parseInt(sides), 175)} fill={colour} stroke="rgba(255,0,0,0.2)" strokeWidth="2" />
+      <path d={polygon(250, 250, parseInt(sides), 175)} fill={colour} stroke="rgba(0,0,0,1)" strokeWidth="1" />
       <text y="470" x="50%" textAnchor="middle" fontSize="36pt">{name}</text>
       </svg>
     </div>

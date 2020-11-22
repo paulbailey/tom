@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { Form, Button } from 'react-bootstrap'
+import { Form, Button, Collapse } from 'react-bootstrap'
 import { ImPrinter } from "react-icons/im";
 
 const names = {
@@ -47,6 +47,30 @@ const prefixes = {
 8: 'Octaconta',
 9: 'Enneaconta',
 10: 'Hecta'
+
+}
+
+const suffixes = {
+  0: 'agon',
+  1: 'henagon',
++2
+ 	...digon
++3
+ 	...trigon
++4
+ 	...tetragon
++5
+ 	...pentagon
++6
+ 	...hexagon
++7
+ 	...heptagon
++8
+ 	...octagon
++9
+ 	...enneagon
+Example: a 62-sided polygon is a Hexacontadigon
+
 
 }
 
@@ -100,10 +124,12 @@ const ShapeController = ({ setSides, setColour, setName }) => {
     <Form.Label>Colour</Form.Label>
     <Form.Control type='color' onChange={handleChangeColour}  value={colour}></Form.Control>
     </Form.Group>
+    <Collapse show={!nameDisabled}>
     <Form.Group>
     <Form.Label>Name</Form.Label>
     <Form.Control type='text' onChange={handleChangeName}  value={name} disabled={nameDisabled}></Form.Control>
     </Form.Group>
+    </Collapse>
     <Button onClick={() => {window.print()}}><ImPrinter /> Print</Button>
     </Form></div>
 }
